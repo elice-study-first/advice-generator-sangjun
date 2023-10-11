@@ -61,8 +61,32 @@ h2 {
   transition: .2s ease-in;
 }
 
+.divider-mobile {
+  display: none;
+}
+
+@media(max-width: 924px) {
+  .divider-mobile {
+    display: block;
+  }
+
+  .divider-desktop {
+    display: none;
+  }
+}
+
 @media(max-width: 620px) {
   .card {
     width: 90%;
+  }
+}
+
+@media(max-width: 375px) {
+  h2 {
+    font-size: 24px;
+  }
+
+  p {
+    font-size: 11px;
   }
 }
