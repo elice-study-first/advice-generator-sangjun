@@ -60,3 +60,9 @@ h2 {
   box-shadow: 0 0 40px 0 rgba(82, 255, 169, 1);
   transition: .2s ease-in;
 }
+
+@media(max-width: 620px) {
+  .card {
+    width: 90%;
+  }
+}
