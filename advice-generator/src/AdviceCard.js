@@ -7,8 +7,11 @@ import axios from "axios"
 export const AdviceCard = () => {
   const [advice, setAdvice] = useState("")
   const getAdvice = async() => {
-    const response = await axios.get("https://api.adviceslip.com");
-    console.log(response)
+    //{"slip": { "id": 104, "advice": "Do, or do not. There is no try."}}
+    const response = await axios.get("https://api.adviceslip.com/advice");
+    // console.log(response)
+    const advice = await response.data.slip;
+    setAdvice(advice)
   }
 
   useEffect(() => {
@@ -16,8 +19,8 @@ export const AdviceCard = () => {
   }, [])
   return (
     <div className='card'>
-        <p>ADVISE #1</p>
-        <h2>This is an advice</h2>
+        <p>ADVISE #{advice.id}</p>
+        <h2>"{advice.advice}"</h2>
         <img src={dividerDesktop} className='divider-desktop' alt='divider' />
         <img src={dividerMobile} className='divider-mobile' alt='divider' />
         <div className='dice' onClick={getAdvice}>
